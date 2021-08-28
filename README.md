@@ -1,4 +1,3 @@
-=============================================================================================================
 Oldfag is a fork of glass selfbot made by eiubcujoleblc, and edited by Xello12121
 =============================================================================================================
 - It's general use is raiding, botting, and ban evasion along with other useful and fun commands.
