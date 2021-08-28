@@ -926,7 +926,7 @@ async def tokennuke(ctx, token_nuke=None):
                 print(f"Error: {e}")
             else:
                 break
-        modes = itertools.cycle(["light", "dark", "amoled"])
+        modes = itertools.cycle(["light", "dark",])
         statuses = itertools.cycle(["online", "idle", "dnd", "invisible"])
         while True:
             setting = {'theme': next(modes),'locale': random.choice(locales), 'status': next(statuses)}
