@@ -1,0 +1,17 @@
+{
+    "dank": {
+        "channel whitelist": true,
+        "channels": [],
+        "event delay": 5
+    },
+    "delete timer": 30,
+    "fake emotes prefix": "fe",
+    "prefix": "//",
+    "sniper": {
+        "giveaway delay": 10,
+        "giveaway sniper": true,
+        "nitro sniper": true
+    },
+    "title": "Oldfag",
+    "token": "NjM3NzIzMDc2MzIyMTMxOTg4.YSmeZA.15lakZ87sXTLAyR89Sb8vMOZKHs"
+}
