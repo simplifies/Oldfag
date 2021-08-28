@@ -5,4 +5,4 @@ Oldfag is a fork of glass selfbot made by eiubcujoleblc, and edited by Xello1212
 - Oldfag runs on Python 3, it has support for WindowsOS and Andriod.
 - To use put your token, in config.json, then select your prefix. Default is //.
 - You can contact us at our discord server - https://discord.gg/UKKAyJSxrj 
-=============================================================================================================
+=========================================================================================
