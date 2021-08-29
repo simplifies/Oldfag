@@ -402,27 +402,6 @@ async def avatar(ctx, *, user: discord.User=oldfag.user):
         await ctx.send("```yaml\nFailed to get user's avatar```", delete_after=5)
 
 
-# clone server
- @oldfag.command()
- async def cloneserver(ctx, id=None):
-     await ctx.message.delete()
-     if id == None:
-         try:
-             await oldfag.create_guild(f"{ctx.guild.name} Copy")
-             await asyncio.sleep(3)
-
-         except:
-            await ctx.send("```yaml\nPlease input a server ID or use this command in a server```", delete_after=5)
-     else:
-         try:
-             id = int(id)
-             server = oldfag.get_guild(id)
-             server_icon = server.icon_url_as(static_format='png')
-            await ctx.send(server_icon)
-         except:
-             await ctx.send("```yaml\nInvalid server ID```", delete_after=5)
-
-
 # reverse avatar
 @oldfag.command(aliases=['revav'])
 async def revavatar(ctx, user: discord.User=None):
