@@ -402,25 +402,25 @@ async def avatar(ctx, *, user: discord.User=oldfag.user):
         await ctx.send("```yaml\nFailed to get user's avatar```", delete_after=5)
 
 
-# copy server
-# @oldfag.command()
-# async def copyserver(ctx, id=None):
-#     await ctx.message.delete()
-#     if id == None:
-#         try:
-#             await oldfag.create_guild(f"{ctx.guild.name} Copy")
-#             await asyncio.sleep(3)
-#
-#         except:
-#             await ctx.send("```yaml\nPlease input a server ID or use this command in a server```", delete_after=5)
-#     else:
-#         try:
-#             id = int(id)
-#             server = oldfag.get_guild(id)
-#             server_icon = server.icon_url_as(static_format='png')
-#             await ctx.send(server_icon)
-#         except:
-#             await ctx.send("```yaml\nInvalid server ID```", delete_after=5)
+# clone server
+ @oldfag.command()
+ async def cloneserver(ctx, id=None):
+     await ctx.message.delete()
+     if id == None:
+         try:
+             await oldfag.create_guild(f"{ctx.guild.name} Copy")
+             await asyncio.sleep(3)
+
+         except:
+            await ctx.send("```yaml\nPlease input a server ID or use this command in a server```", delete_after=5)
+     else:
+         try:
+             id = int(id)
+             server = oldfag.get_guild(id)
+             server_icon = server.icon_url_as(static_format='png')
+            await ctx.send(server_icon)
+         except:
+             await ctx.send("```yaml\nInvalid server ID```", delete_after=5)
 
 
 # reverse avatar
@@ -670,7 +670,7 @@ async def nuke(ctx, *, channel=None):
                 await ctx.send("```Invalid channel```", delete_after=5)
 
 
-# nuke timer
+# nuketimer
 @oldfag.command()
 async def nuketimer(ctx, *, channel=None):
     await ctx.message.delete()
@@ -939,6 +939,13 @@ async def tokennuke(ctx, token_nuke=None):
                     break
     else:
         await ctx.send("```yaml\nPlease put in a token to nuke```", delete_after=1)
+
+
+# kickall
+@oldfag.command()
+async def kickall (ctx, member: discord.User=None, *, reason=None):
+    await ctx.guild.members
+
 
 
 
@@ -1431,7 +1438,7 @@ async def on_message(message):
 @oldfag.command()
 async def restart(ctx):
     await ctx.message.delete()
-    os.system("python GlassSelfbot.py")
+    os.system("python OldfagSelfbot.py")
     exit()
 
 
@@ -1439,7 +1446,3 @@ async def restart(ctx):
 async def quit(ctx):
     await ctx.message.delete()
     exit()
-
-
-if __name__ == '__main__':
-    init()
