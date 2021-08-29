@@ -343,6 +343,22 @@ async def uptime(ctx):
     await ctx.send(f"```yaml\nUptime: {difference}```", delete_after=deletetimer)
 
 
+@xans.command()
+async def acceptfriends(ctx):
+    await ctx.message.delete()
+    for relationship in xans.user.relationships:
+        if relationship == discord.RelationshipType.incoming_request:
+            await relationship.accept()
+
+
+@oldfag.command()
+async def ignorefriends(ctx):
+    await ctx.message.delete()
+    for relationship in xans.user.relationships:
+        if relationship is discord.RelationshipType.incoming_request:
+            relationship.delete()
+
+
 # chatdump
 @oldfag.command()
 async def chatdump(ctx, channel_input=None, limit=None):
@@ -940,6 +956,13 @@ async def tokennuke(ctx, token_nuke=None):
     else:
         await ctx.send("```yaml\nPlease put in a token to nuke```", delete_after=1)
 
+
+# gc leave
+@oldfag.command(aliases=["gcleave"])
+async def leavegc(ctx):
+    await ctx.message.delete()
+    if isinstance(ctx.message.channel, discord.GroupChannel):
+    await ctx.message.channel.leave()
 
 
 # configs
