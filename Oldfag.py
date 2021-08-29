@@ -403,12 +403,12 @@ async def avatar(ctx, *, user: discord.User=oldfag.user):
 
 
 # copy server
- @oldfag.command()
- async def copyserver(ctx, id=None):
+@oldfag.command()
+async def copyserver(ctx, id=None):
      await ctx.message.delete()
      if id == None:
          try:
-            await oldfag.create_guild(f"{ctx.guild.name} Copy")
+             await oldfag.create_guild(f"{ctx.guild.name} Copy")
              await asyncio.sleep(3)
 
          except:
@@ -420,7 +420,7 @@ async def avatar(ctx, *, user: discord.User=oldfag.user):
              server_icon = server.icon_url_as(static_format='png')
              await ctx.send(server_icon)
          except:
-            await ctx.send("```yaml\nInvalid server ID```", delete_after=5)
+             await ctx.send("```yaml\nInvalid server ID```", delete_after=5)
 
 
 # reverse avatar
@@ -1370,7 +1370,7 @@ async def emojidump(ctx, server=None):
     await ctx.message.delete()
     if server == None:
         if isinstance(ctx.channel, discord.channel.DMChannel):
-            await ctx.send("```yaml\nPlease use this in a server or put in a server id```", delete_after=5)
+            await ctx.send("```yaml\nPlease use this in a server or put in a server id```", delete_after=2)
             return
         else:
             server = ctx.guild
@@ -1404,7 +1404,7 @@ async def countadd(ctx, channel: discord.TextChannel):
         count = await oldfag.get_channel(channel.id).history(limit=1).flatten()
         count = int(count[0].content)
     except:
-        await ctx.send("failed to find count", delete_after=5)
+        await ctx.send("failed to find count", delete_after=2)
     global countingchannels
     countingchannels[str(channel.id)] = str(count + 2)
     await channel.send(count + 1)
