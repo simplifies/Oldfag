@@ -343,7 +343,7 @@ async def uptime(ctx):
     await ctx.send(f"```yaml\nUptime: {difference}```", delete_after=deletetimer)
 
 
-@xans.command()
+@oldfag.command()
 async def acceptfriends(ctx):
     await ctx.message.delete()
     for relationship in xans.user.relationships:
